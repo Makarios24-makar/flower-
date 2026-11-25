@@ -1,0 +1,9 @@
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#020104}
+#stage{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(75,10,54,.2),transparent 48%),#020104}
+canvas{display:block;width:100%;height:100%}
+#scanlines{pointer-events:none;position:fixed;inset:0;opacity:.22;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(255,190,225,.12) 4px,transparent 5px);mix-blend-mode:screen}
+#noise{pointer-events:none;position:fixed;inset:-50%;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");animation:grain .18s steps(2) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(2%,-1%)}50%{transform:translate(-1%,2%)}75%{transform:translate(1%,1%)}100%{transform:translate(-2%,-1%)}}
+.label{position:fixed;left:22px;bottom:18px;color:rgba(255,205,231,.38);font:10px/1.5 ui-monospace,monospace;letter-spacing:.22em;text-transform:uppercase;user-select:none}
+.hint{position:fixed;right:22px;bottom:18px;color:rgba(255,205,231,.3);font:10px ui-monospace,monospace;letter-spacing:.12em;user-select:none}
+@media(max-width:600px){.label{left:12px;bottom:12px}.hint{right:12px;bottom:12px}}
